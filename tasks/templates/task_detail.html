@@ -17,7 +17,7 @@
                     {% csrf_token %}
                     {{form.as_p}}
                     <button class="btn btn-primary">
-                        Update            
+                        Actualizar            
                     </button>
                 </form>
 
@@ -26,14 +26,14 @@
                 <form action="{% url 'complete_task' task.id %}" method="POST">
                     {% csrf_token %}
                     <button class="btn btn-secondary">
-                        Complete
+                        Completar
                     </button>
                 </form>
     
                 <form action="{% url 'delete_task' task.id %}" method="POST">
                     {% csrf_token %}
                     <button class="btn btn-danger">
-                        Delete
+                        Eliminar
                     </button>
                 </form>
             </div>
