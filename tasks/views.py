@@ -31,12 +31,12 @@ def signup(request):
             except IntegrityError:
                 return render(request, 'signup.html', {
                     'form': UserCreationForm,
-                    'error': 'User already exists'
+                    'error': 'El nombre de usuario ya existe'
                 })
 
         return render(request, 'signup.html', {
             'form': UserCreationForm,
-            'error': 'Password do not match'
+            'error': 'La contraseña no coincide'
         })
 
 @login_required
@@ -67,7 +67,7 @@ def create_task(request):
         except ValueError:
             return render(request, 'create_task.html', {
                 'form': TaskForm,
-                'error': 'Please provide valid data'
+                'error': 'Por favor ingrese datos válidos'
             })
 
 @login_required
