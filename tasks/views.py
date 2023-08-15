@@ -36,7 +36,7 @@ def signup(request):
 
         return render(request, 'signup.html', {
             'form': UserCreationForm,
-            'error': 'La contraseña no coincide'
+            'error': 'Las contraseñas no coinciden'
         })
 
 @login_required
@@ -84,7 +84,7 @@ def task_detail(request, task_id):
             return redirect('tasks')
         except ValueError:
             return render(request, 'task_detail.html', {'task': task, 'form': form,
-            'error': "Error updating task"})
+            'error': "Error al actualizar tarea"})
 
 @login_required            
 def complete_task(request, task_id):
@@ -119,7 +119,7 @@ def signin(request):
         if user is None:
             return render(request, 'signin.html', {
                 'form': AuthenticationForm,
-                'error': 'Username or password is incorrect'
+                'error': 'Usuario o contraseña incorrecta'
             })
         else:
             login(request, user)
